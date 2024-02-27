@@ -8,7 +8,8 @@ function Avatar({ name, color }: { name: string; color: string }) {
 
   return (
     <div
-      className={`w-10 h-10 rounded-full flex items-center justify-center bg-[${color}]`}
+      className={`w-10 h-10 rounded-full flex items-center justify-center `}
+      style={{ backgroundColor: color }}
     >
       <span className="text-white font-semibold">{nameInitials}</span>
     </div>
