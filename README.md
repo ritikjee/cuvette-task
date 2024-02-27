@@ -11,9 +11,9 @@ This project is a notes application developed using the MERN stack (MongoDB, Exp
 
 ## Tech Stack
 
-**Client:** React, NextJS, Shadcn-ui, TailwindCSS
+**Client:** React, NextJS, TailwindCSS
 
-**Server:** Node, Express, Socket.io, MongoDB
+**Server:** Node, Express, MongoDB
 
 ### Preqrequisites
 
