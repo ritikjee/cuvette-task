@@ -25,17 +25,17 @@ Refer to https://nodejs.org/en/ to install nodejs
 
 Refer to https://www.typescriptlang.org/ to install typescript
 
-```bash
-npm install -g typescript
-```
+    ```bash
+    npm install -g typescript
+    ```
 
 #### Install ts-node
 
 Refer to https://www.typescriptlang.org/ to install ts-node
 
-```bash
+    ```bash
     npm install -g ts-node
-```
+    ```
 
 #### Learn Tailwind CSS
 

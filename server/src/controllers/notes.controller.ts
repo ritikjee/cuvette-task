@@ -4,7 +4,13 @@ import NoteCollections from "../models/collection.model";
 import Note from "../models/note.model";
 
 export async function getNotes(req: Request, res: Response) {
-  const { collectionId } = req.query;
+  const { collectionId } = req.params;
+
+  if (!collectionId) {
+    return res
+      .status(400)
+      .json({ message: "Please provide collectionId to get notes" });
+  }
 
   try {
     const collection = await NoteCollections.findById(collectionId).populate(

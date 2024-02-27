@@ -10,10 +10,6 @@ const noteSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Collection",
     },
-    color: {
-      type: String,
-      default: "yellow",
-    },
   },
   {
     timestamps: true,

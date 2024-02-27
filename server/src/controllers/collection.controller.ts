@@ -13,8 +13,33 @@ export async function getCollection(req: Request, res: Response) {
   }
 }
 
+export async function getCollectionById(req: Request, res: Response) {
+  const { collectionId } = req.params;
+
+  if (!collectionId) {
+    return res
+      .status(400)
+      .json({ message: "Please provide collectionId to get collection" });
+  }
+
+  try {
+    const collection = await NoteCollections.findById(collectionId).select(
+      "-notes"
+    );
+
+    if (!collection) {
+      return res.status(404).json({ message: "Collection not found" });
+    }
+
+    return res.status(200).json(collection);
+  } catch (error) {
+    console.log("get-collection-by-id error", error);
+    return res.status(500).json({ message: "Internal Server error" });
+  }
+}
+
 export async function createCollection(req: Request, res: Response) {
-  const { title } = req.body;
+  const { title, color } = req.body;
 
   if (!title) {
     return res
@@ -25,6 +50,7 @@ export async function createCollection(req: Request, res: Response) {
   try {
     const newCollection = await NoteCollections.create({
       title,
+      color,
     });
 
     return res.status(201).json({ message: "Sucessfully created a todo" });
