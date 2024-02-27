@@ -3,6 +3,8 @@ import express, { Express } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDb } from "./db/connectDB";
+import collectionRouter from "./routes/collection.route";
+import notesRouter from "./routes/note.route";
 
 dotenv.config();
 
@@ -13,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 8080;
+
+app.use("/api/collection", collectionRouter);
+app.use("/api/notes", notesRouter);
 
 app.listen(PORT, () =>
   console.log("Server running on http://localhost:" + PORT)
