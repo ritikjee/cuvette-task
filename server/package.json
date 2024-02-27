@@ -7,7 +7,7 @@
     "ts-node": "ts-node",
     "dev": "nodemon",
     "build": "npx tsc",
-    "start": "node build/server.js"
+    "start": "node dist/server.js"
   },
   "keywords": [
     "todo",
