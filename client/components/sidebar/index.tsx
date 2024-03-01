@@ -18,9 +18,9 @@ async function Sidebar() {
   }
 
   return (
-    <div className="w-[300px] 2xl:w-[500px] min-h-screen relative">
+    <div className="w-[300px] 2xl:w-[500px] min-h-screen relative pb-28">
       <h1 className="text-2xl py-10 text-center font-semibold">Pocket Notes</h1>
-      <div className=" h-[500px] w-full overflow-y-scroll">
+      <div className=" max-h-full w-full overflow-y-scroll ">
         {collections.map((collection: any) => {
           return (
             <Link href={`/collection/${collection._id}`} key={collection._id}>
